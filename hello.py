@@ -17,7 +17,7 @@ Execucao:
     ou
     ./hello.py
 """
-__version__ = "0.0.1"
+__version__ = "0.1.2"
 __author__ = "Marcos Teles"
 __license__ = "Unlicense"
 
@@ -28,15 +28,13 @@ import os
 # snake case
 current_language = os.getenv("LANG", "en_US")[:5]
 
-msg = "Hello, World!"
+# Complexidade O(1)
+msg = {
+    "pt_BR": "Olá, mundo!",
+    "en_US": "Hello, world!",
+    "en_SP": "Hola, Mundo!",
+    "it_IT": "Cion, Mondo!",
+    "fr_FR": "Bonjuor Monde!"
+}
 
-if current_language == "pt_BR":
-    msg = "Ola, Mundo!"
-elif current_language == "it_IT":
-    msg = "Ciao, Mondo!"
-elif current_language == "en_SP":
-    msg = "Hola, Mundo!"
-elif current_language == "fr_FR":
-    msg = "Bonjuor Monde"
-
-print(msg)
+print(msg[current_language])
